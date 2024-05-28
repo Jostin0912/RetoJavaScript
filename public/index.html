@@ -3,10 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../src/css/tailwind.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../public/css/tailwind.css">
+    <title>Calculadora de porcentaje</title>
 </head>
-<body>
-    
+<body class="bg-teal-900 font-sans flex items-center justify-center min-h-screen">
+  <div class="w-full max-w-2xl mx-auto p-12 bg-teal-800 rounded-lg shadow-md">
+    <h1 class="text-center text-cyan-300 text-4xl">Calculadora de porcentaje</h1>
+    <hr class="border-cyan-300 my-8 w-full">
+
+    <div class="flex items-center justify-center mt-8 space-x-6">
+      <label for="numero1" class="text-cyan-300 text-2xl">Calcula el </label>
+      <input type="number" id="numero1" value="" class="w-40 p-1 bg-cyan-100 text-teal-900 rounded border border-cyan-300 text-2xl">
+      <span class="text-cyan-300 text-2xl"> % de </span>
+      <input type="number" id="numero2" value="" class="w-40 p-1 bg-cyan-100 text-teal-900 rounded border border-cyan-300 text-2xl">
+    </div>
+
+    <div class="text-center mt-8">
+      <button onclick="calcular()" class="px-10 py-4 bg-cyan-300 text-teal-900 rounded cursor-pointer text-2xl border border-cyan-300">CALCULAR</button>
+    </div>
+
+    <div id="resultado" class="text-center text-3xl text-cyan-300 mt-8">Resultado: </div>
+  </div>
+
+  <script>
+    function calcular() {
+      let numero1 = parseFloat(document.getElementById("numero1").value);
+      let numero2 = parseFloat(document.getElementById("numero2").value);
+      let resultado = (numero1 / 100) * numero2;
+      document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
+    }
+  </script>
 </body>
 </html>
